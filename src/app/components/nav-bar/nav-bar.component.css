@@ -1,0 +1,9 @@
+.pokemon-logo {
+  width: 150px;
+  height: 150px;
+}
+
+mat-toolbar {
+  margin-bottom: 50px;
+  background: black;
+}

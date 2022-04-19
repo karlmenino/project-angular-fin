@@ -1,0 +1,106 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>{{titre}}</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <form [formGroup]="carsFormulaire" (ngSubmit)="onSubmit()">
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="title" >title</label>
+            <input id="title" matInput formControlName="title">
+            <mat-error *ngIf="f['title'].errors?.['required']">Le titre est requis</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="adress" >adress</label>
+            <input id="adress" matInput formControlName="adress" >
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="brand" >brand</label>
+            <input id="brand" matInput formControlName="brand" >
+           </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="model" >model</label>
+            <input id="model" matInput formControlName="model">
+            <mat-error *ngIf="f['model'].errors?.['required']">Le model est requis</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="model_year" >model_year</label>
+            <input id="model_year" matInput formControlName="model_year" type="number">
+            <mat-error *ngIf="f['model_year'].errors?.['required']">Le model_year est requis</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="issuance" >issuance</label>
+            <input id="issuance" matInput formControlName="issuance" type="datetime-local">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="fuel" >fuel</label>
+            <input id="fuel" matInput formControlName="fuel">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="color" >color</label>
+            <input id="color" matInput formControlName="color" >
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="numbers_doors" >numbers_doors</label>
+            <input id="numbers_doors" matInput formControlName="numbers_doors" type="number">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="horse_power" >horse_power</label>
+            <input id="horse_power" matInput formControlName="horse_power" type="number">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="price" >price</label>
+            <input id="price" matInput formControlName="price" type="number">
+            <mat-error *ngIf="f['price'].errors?.['required']">Le model_year est requis</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="pictures" >pictures</label>
+            <input id="pictures" matInput formControlName="pictures">
+            <mat-error *ngIf="f['pictures'].errors?.['required']">L'image est requis</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <label for="solde" >solde </label>
+            <mat-select id="solde" multiple formControlName="solde">
+              <mat-option  [value]="true">true</mat-option>
+              <mat-option  [value]="false">false</mat-option>
+            </mat-select>
+
+          </mat-form-field>
+        </p>
+
+        <!-- Submit -->
+        <mat-card-actions align="end">
+          <button mat-flat-button color="primary" type="submit">Ajouter</button>
+        </mat-card-actions>
+
+      </form>
+    </mat-card-content>
+
+
+  </mat-card>
+</div>

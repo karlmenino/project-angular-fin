@@ -1,0 +1,27 @@
+
+<div class="card" style="width: 18rem;">
+  <img [src]="cars.pictures[0]" class="card-img-top w-50 align-self-center" [alt]="cars.title">
+  <div class="card-body align-self-center">
+    <h5 class="card-title ">{{cars.title}}</h5>
+    <p class="card-text">{{cars.brand}}</p>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      Modèle : <span *ngIf="cars.model;else na">{{cars.model}}</span>
+    </li>
+    <li class="list-group-item">
+      Année : <span *ngIf="cars.model_year;else na">{{cars.model_year}}</span>
+
+    </li>
+    <li class="list-group-item">
+      couleur : <span *ngIf="cars.color;else na">{{cars.color}}</span>
+    </li>
+    <li class="list-group-item">
+      prix : <span *ngIf="cars.price;else na">{{cars.price}}</span>
+    </li>
+  </ul>
+<!--  <button type="button" class="btn btn-primary" (click)="envoiePere()">SELECTION</button>-->
+</div>
+
+<ng-template #na>N/A</ng-template>
